@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P1/P2 Tickets Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎫 P1/P2 Incident Tickets Dashboard</h1>
+            <div class="filters">
+                <button onclick="loadTickets('all')" class="btn active" id="btn-all">All Tickets</button>
+                <button onclick="loadTickets('P1')" class="btn" id="btn-p1">P1 Only</button>
+                <button onclick="loadTickets('P2')" class="btn" id="btn-p2">P2 Only</button>
+                <button onclick="refreshTickets()" class="btn btn-refresh">🔄 Refresh</button>
+            </div>
+        </header>
+
+        <div id="loading" class="loading">Loading tickets...</div>
+        <div id="error" class="error" style="display: none;"></div>
+        
+        <div id="ticket-count" class="ticket-count"></div>
+        
+        <div id="tickets-container" class="tickets-grid"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
